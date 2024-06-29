@@ -1,81 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Videogames - Stitch</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Movies - Stitch</title>
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mansalva&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Mansalva&family=Salsa&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Mansalva&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Mansalva&family=Salsa&display=swap" rel="stylesheet"/>
     <!-- Styles -->
-    <link rel="stylesheet" href="css/stitch.css">
-    <link rel="stylesheet" href="css/nav.css">
-    <link rel="stylesheet" href="css/containers.css">
-</head>
-<body>
-    <!-- Navbar -->
-    <nav class="navbar">
+    <link rel="stylesheet" href="css/stitch.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/containers.css" />
+  </head>
+  <body>
+    <header>
+      <!-- Navbar -->
+      <nav class="navbar">
         <section class="navbar-container">
           <div class="navbar-brand">
             <p class="stitch-nav">Stitch</p>
             <img src="images/stitchLogo.png" class="logo" alt="logo" />
           </div>
-          <div class="navbar-menu-main" id="navMenu">
+          <nav class="navbar-menu-main" id="navMenu">
             <a href="index.html" class="nav-buttons">Stitch home</a>
             <a href="movies.html" class="nav-buttons">Movies</a>
             <a href="shorts.html" class="nav-buttons">Shorts</a>
             <a href="tvshows.html" class="nav-buttons">TV Shows</a>
-            <a href="videogames.html" class="nav-buttons">VideoGames</a>
+            <a href="videogames.html" class="nav-buttons">Video Games</a>
             <a href="parkattractions.html" class="nav-buttons">Park Attractions</a>
-          </div>
+          </nav>
         </section>
       </nav>
-    <!-- Content -->
+    </header>
+    <!-- Main Content -->
     <main class="content-div">
-        <div id="videoGames-container">
-            <h1 class="categories">Videogames</h1>
-            <div class="videoGames-grid"></div>
+      <section id="videoGames-container">
+        <h1 class="categories">Video Games</h1>
+        <div class="videoGames-grid">
+          <!-- Video games content will go here -->
         </div>
+      </section>
     </main>
     <!-- Footer -->
     <footer class="footer">
-        <section>
-            <p>@2024 Made by Alexandra Smirnova.</p>
-        </section>
+      <section>
+        <p>@2024 Made by Alexandra Smirnova.</p>
+      </section>
     </footer>
     <!-- Scripts -->
     <script>
-        const imagePathMap = {
-            'Lilo & Stitch (Game Boy Advance)': "images/gba.jpg",
-            'Lilo & Stitch Pinball': "images/pinball.jpg",
-            'Lilo & Stitch: Trouble in Paradise': "images/troubleInParadise.jpg",
-            'Lilo & Stitch: Hawaiian Adventure': "images/hawaiianAdventure.png",
-            'Disney\'s Stitch: Experiment 626': "images/experiment626.png",
-            'Lilo & Stitch 2: Hämsterviel Havoc': "images/hamstervielHavoc.jpg",
-            'Kingdom Hearts (series)': "images/kingdomHearts.png",
-            'Stitch Jam': "images/stitchJam.jpg",
-            'Stitch Jam 2': "images/stitchJam2.png",
-            'Disney Friends': "images/disneyFriends.jpg",
-            'Meteos: Disney Magic': "images/meteos.png",
-            'Disney TH!NK Fast': "images/thinkFast.jpg",
-            'Disney Universe': "images/universe.jpg",
-            'Kinect: Disneyland Adventures': "images/disneylandAdventures.jpg",
-            'Disney Infinity (series)': "images/infinity.jpg",
-            'Disney Magical World': "images/magicalWorld.jpg",
-            'Disney Tsum Tsum (game)': "images/tsumTsum.jpg",
-            'Disney Emoji Blitz': "images/emojiBlitz.jpg",
-            'Disney Crossy Road': "images/crossyRoad.jpg",
-            'Disney Magical Dice': "images/magicalDice.jpg",
-            'Disney Magic Kingdoms': "images/magicKingdoms.jpg",
-            'Disney Heroes: Battle Mode': "images/battleMode.jpg",
-            'Disney Epic Quest': "images/noImage.jpg",
-            'Disney Tsum Tsum Festival': "images/tsumTsumFestival.png",
-            'Disney Sorcerer\'s Arena': "images/sorcerersArena.jpg",
-            'Disney Getaway Blast': "images/getawayBlast.jpg",
-        }
+      const imagePathMap = {
+        "Lilo & Stitch (Game Boy Advance)": "images/gba.jpg",
+        "Lilo & Stitch Pinball": "images/pinball.jpg",
+        "Lilo & Stitch: Trouble in Paradise": "images/troubleInParadise.jpg",
+        "Lilo & Stitch: Hawaiian Adventure": "images/hawaiianAdventure.png",
+        "Disney's Stitch: Experiment 626": "images/experiment626.png",
+        "Lilo & Stitch 2: Hämsterviel Havoc": "images/hamstervielHavoc.jpg",
+        "Kingdom Hearts (series)": "images/kingdomHearts.png",
+        "Stitch Jam": "images/stitchJam.jpg",
+        "Stitch Jam 2": "images/stitchJam2.png",
+        "Disney Friends": "images/disneyFriends.jpg",
+        "Meteos: Disney Magic": "images/meteos.png",
+        "Disney TH!NK Fast": "images/thinkFast.jpg",
+        "Disney Universe": "images/universe.jpg",
+        "Kinect: Disneyland Adventures": "images/disneylandAdventures.jpg",
+        "Disney Infinity (series)": "images/infinity.jpg",
+        "Disney Magical World": "images/magicalWorld.jpg",
+        "Disney Tsum Tsum (game)": "images/tsumTsum.jpg",
+        "Disney Emoji Blitz": "images/emojiBlitz.jpg",
+        "Disney Crossy Road": "images/crossyRoad.jpg",
+        "Disney Magical Dice": "images/magicalDice.jpg",
+        "Disney Magic Kingdoms": "images/magicKingdoms.jpg",
+        "Disney Heroes: Battle Mode": "images/battleMode.jpg",
+        "Disney Epic Quest": "images/noImage.jpg",
+        "Disney Tsum Tsum Festival": "images/tsumTsumFestival.png",
+        "Disney Sorcerer's Arena": "images/sorcerersArena.jpg",
+        "Disney Getaway Blast": "images/getawayBlast.jpg",
+      };
     </script>
     <script src="js/stitch.js"></script>
-</body>
+  </body>
 </html>

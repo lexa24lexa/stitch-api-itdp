@@ -1,69 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Movies - Stitch</title>
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mansalva&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Mansalva&family=Salsa&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Mansalva&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Mansalva&family=Salsa&display=swap" rel="stylesheet"/>
     <!-- Styles -->
-    <link rel="stylesheet" href="css/stitch.css">
-    <link rel="stylesheet" href="css/nav.css">
-    <link rel="stylesheet" href="css/containers.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/stitch.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/containers.css" />
+  </head>
+  <body>
     <!-- Navbar -->
-    <nav class="navbar">
+    <header>
+      <nav class="navbar">
         <section class="navbar-container">
           <div class="navbar-brand">
             <p class="stitch-nav">Stitch</p>
             <img src="images/stitchLogo.png" class="logo" alt="logo" />
           </div>
-          <div class="navbar-menu-main" id="navMenu">
+          <nav class="navbar-menu-main" id="navMenu">
             <a href="index.html" class="nav-buttons">Stitch home</a>
             <a href="movies.html" class="nav-buttons">Movies</a>
             <a href="shorts.html" class="nav-buttons">Shorts</a>
             <a href="tvshows.html" class="nav-buttons">TV Shows</a>
-            <a href="videogames.html" class="nav-buttons">VideoGames</a>
+            <a href="videogames.html" class="nav-buttons">Video Games</a>
             <a href="parkattractions.html" class="nav-buttons">Park Attractions</a>
-          </div>
+          </nav>
         </section>
       </nav>
-    <!-- Content -->
+    </header>
+    <!-- Main Content -->
     <main class="content-div">
-        <div id="films-container">
-            <h1 class="categories">Movies</h1>
-            <div class="films-grid"></div>
+      <section id="films-container">
+        <h1 class="categories">Movies</h1>
+        <div class="films-grid">
+          <!-- Movies content will go here -->
         </div>
+      </section>
     </main>
     <!-- Footer -->
     <footer class="footer">
-        <section>
-            <p>@2024 Made by Alexandra Smirnova.</p>
-        </section>
+      <section>
+        <p>@2024 Made by Alexandra Smirnova.</p>
+      </section>
     </footer>
     <!-- Scripts -->
     <script>
-        const imagePathMap = {
-            'Lilo & Stitch': "images/liloStitch.png",
-            'Lilo & Stitch 2: Stitch Has a Glitch': "images/liloStitch2hasaglitch.jpg",
-            'Stitch! The Movie': "images/stitchTheMovie.png",
-            'Leroy & Stitch': "images/leroyAndStitch.png",
-            'Lilo & Stitch (live-action film)': "images/noImage.jpg",
-        }
-        const excludeMovies = [
-            'Treasure Planet',
-            'Brother Bear',
-            'Outtakes',
-            'The Lion King 1½',
-            'Once Upon a Halloween',
-            'Big Hero 6',
-            'Ralph Breaks the Internet'
-        ];
+      const imagePathMap = {
+        "Lilo & Stitch": "images/liloStitch.png",
+        "Lilo & Stitch 2: Stitch Has a Glitch":
+          "images/liloStitch2hasaglitch.jpg",
+        "Stitch! The Movie": "images/stitchTheMovie.png",
+        "Leroy & Stitch": "images/leroyAndStitch.png",
+        "Lilo & Stitch (live-action film)": "images/noImage.jpg",
+      };
+      const excludeMovies = [
+        "Treasure Planet",
+        "Brother Bear",
+        "Outtakes",
+        "The Lion King 1½",
+        "Once Upon a Halloween",
+        "Big Hero 6",
+        "Ralph Breaks the Internet",
+      ];
     </script>
     <script src="js/stitch.js"></script>
-</body>
+  </body>
 </html>
