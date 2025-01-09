@@ -7,8 +7,14 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Mansalva&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Mansalva&family=Salsa&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mansalva&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mansalva&family=Salsa&display=swap"
+      rel="stylesheet"
+    />
     <!-- Styles -->
     <link rel="stylesheet" href="css/stitch.css" />
     <link rel="stylesheet" href="css/containers.css" />
@@ -27,8 +33,14 @@
             <li><a href="movies.html" class="nav-buttons">Movies</a></li>
             <li><a href="shorts.html" class="nav-buttons">Shorts</a></li>
             <li><a href="tvshows.html" class="nav-buttons">TV Shows</a></li>
-            <li><a href="videogames.html" class="nav-buttons">Video Games</a></li>
-            <li><a href="parkattractions.html" class="nav-buttons">Park Attractions</a></li>
+            <li>
+              <a href="videogames.html" class="nav-buttons">Video Games</a>
+            </li>
+            <li>
+              <a href="parkattractions.html" class="nav-buttons"
+                >Park Attractions</a
+              >
+            </li>
           </ul>
         </div>
       </nav>
@@ -50,34 +62,56 @@
     </footer>
     <!-- Scripts -->
     <script>
-      const imagePathMap = {
-        "Lilo & Stitch (Game Boy Advance)": "images/gba.jpg",
-        "Lilo & Stitch Pinball": "images/pinball.jpg",
-        "Lilo & Stitch: Trouble in Paradise": "images/troubleInParadise.jpg",
-        "Lilo & Stitch: Hawaiian Adventure": "images/hawaiianAdventure.png",
-        "Disney's Stitch: Experiment 626": "images/experiment626.png",
-        "Lilo & Stitch 2: Hämsterviel Havoc": "images/hamstervielHavoc.jpg",
-        "Kingdom Hearts (series)": "images/kingdomHearts.png",
-        "Stitch Jam": "images/stitchJam.jpg",
-        "Stitch Jam 2": "images/stitchJam2.png",
-        "Disney Friends": "images/disneyFriends.jpg",
-        "Meteos: Disney Magic": "images/meteos.png",
-        "Disney TH!NK Fast": "images/thinkFast.jpg",
-        "Disney Universe": "images/universe.jpg",
-        "Kinect: Disneyland Adventures": "images/disneylandAdventures.jpg",
-        "Disney Infinity (series)": "images/infinity.jpg",
-        "Disney Magical World": "images/magicalWorld.jpg",
-        "Disney Tsum Tsum (game)": "images/tsumTsum.jpg",
-        "Disney Emoji Blitz": "images/emojiBlitz.jpg",
-        "Disney Crossy Road": "images/crossyRoad.jpg",
-        "Disney Magical Dice": "images/magicalDice.jpg",
-        "Disney Magic Kingdoms": "images/magicKingdoms.jpg",
-        "Disney Heroes: Battle Mode": "images/battleMode.jpg",
-        "Disney Epic Quest": "images/noImage.jpg",
-        "Disney Tsum Tsum Festival": "images/tsumTsumFestival.png",
-        "Disney Sorcerer's Arena": "images/sorcerersArena.jpg",
-        "Disney Getaway Blast": "images/getawayBlast.jpg",
-      };
+      document.addEventListener("DOMContentLoaded", () => {
+        const imagePathMap = {
+          "Lilo & Stitch (Game Boy Advance)": "images/gba.jpg",
+          "Lilo & Stitch Pinball": "images/pinball.jpg",
+          "Lilo & Stitch: Trouble in Paradise": "images/troubleInParadise.jpg",
+          "Lilo & Stitch: Hawaiian Adventure": "images/hawaiianAdventure.png",
+          "Disney's Stitch: Experiment 626": "images/experiment626.png",
+          "Lilo & Stitch 2: Hämsterviel Havoc": "images/hamstervielHavoc.jpg",
+          "Kingdom Hearts (series)": "images/kingdomHearts.png",
+          "Stitch Jam": "images/stitchJam.jpg",
+          "Stitch Jam 2": "images/stitchJam2.png",
+          "Disney Friends": "images/disneyFriends.jpg",
+          "Meteos: Disney Magic": "images/meteos.png",
+          "Disney TH!NK Fast": "images/thinkFast.jpg",
+          "Disney Universe": "images/universe.jpg",
+          "Kinect: Disneyland Adventures": "images/disneylandAdventures.jpg",
+          "Disney Infinity (series)": "images/infinity.jpg",
+          "Disney Magical World": "images/magicalWorld.jpg",
+          "Disney Tsum Tsum (game)": "images/tsumTsum.jpg",
+          "Disney Emoji Blitz": "images/emojiBlitz.jpg",
+          "Disney Crossy Road": "images/crossyRoad.jpg",
+          "Disney Magical Dice": "images/magicalDice.jpg",
+          "Disney Magic Kingdoms": "images/magicKingdoms.jpg",
+          "Disney Heroes: Battle Mode": "images/battleMode.jpg",
+          "Disney Epic Quest": "images/noImage.jpg",
+          "Disney Tsum Tsum Festival": "images/tsumTsumFestival.png",
+          "Disney Sorcerer's Arena": "images/sorcerersArena.jpg",
+          "Disney Getaway Blast": "images/getawayBlast.jpg",
+        };
+
+        const videoGamesContainer = document.querySelector(".videoGames-grid");
+
+        Object.keys(imagePathMap).forEach((gameTitle) => {
+          const gameItem = document.createElement("li");
+          gameItem.classList.add("videoGames-item");
+
+          const gameImage = document.createElement("img");
+          gameImage.src = imagePathMap[gameTitle];
+          gameImage.alt = gameTitle;
+          gameImage.classList.add("item-image");
+
+          const gameTitleElement = document.createElement("p");
+          gameTitleElement.textContent = gameTitle;
+          gameTitleElement.classList.add("item-name");
+
+          gameItem.appendChild(gameImage);
+          gameItem.appendChild(gameTitleElement);
+          videoGamesContainer.appendChild(gameItem);
+        });
+      });
     </script>
     <script src="js/stitch.js"></script>
   </body>

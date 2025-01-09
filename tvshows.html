@@ -7,8 +7,14 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Mansalva&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Mansalva&family=Salsa&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mansalva&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mansalva&family=Salsa&display=swap"
+      rel="stylesheet"
+    />
     <!-- Styles -->
     <link rel="stylesheet" href="css/stitch.css" />
     <link rel="stylesheet" href="css/containers.css" />
@@ -27,8 +33,14 @@
             <li><a href="movies.html" class="nav-buttons">Movies</a></li>
             <li><a href="shorts.html" class="nav-buttons">Shorts</a></li>
             <li><a href="tvshows.html" class="nav-buttons">TV Shows</a></li>
-            <li><a href="videogames.html" class="nav-buttons">Video Games</a></li>
-            <li><a href="parkattractions.html" class="nav-buttons">Park Attractions</a></li>
+            <li>
+              <a href="videogames.html" class="nav-buttons">Video Games</a>
+            </li>
+            <li>
+              <a href="parkattractions.html" class="nav-buttons"
+                >Park Attractions</a
+              >
+            </li>
           </ul>
         </div>
       </nav>
@@ -50,15 +62,34 @@
     </footer>
     <!-- Scripts -->
     <script>
-      const imagePathMap = {
-        "Lilo & Stitch: The Series": "images/liloStitchSeries.jpg",
-        "Stitch!": "images/noImage.jpg",
-        "Stitch & Ai": "images/stitchAndAi.png",
-      };
-      const excludeTVShows = [
-        "A Poem Is...",
-        "It's a Small World: The Animated Series",
-      ];
+      document.addEventListener("DOMContentLoaded", () => {
+        const imagePathMap = {
+          "Lilo & Stitch: The Series": "images/liloStitchSeries.jpg",
+          "Stitch!": "images/noImage.jpg",
+          "Stitch & Ai": "images/stitchAndAi.png",
+        };
+
+        const tvShowsContainer = document.querySelector(".tvShows-grid");
+
+        Object.keys(imagePathMap).forEach((tvShowTitle) => {
+          const tvShowItem = document.createElement("li");
+          tvShowItem.classList.add("tvShows-item");
+
+          const tvShowImage = document.createElement("img");
+          tvShowImage.src = imagePathMap[tvShowTitle];
+          tvShowImage.alt = tvShowTitle;
+          tvShowImage.classList.add("item-image");
+
+          const tvShowTitleElement = document.createElement("p");
+          tvShowTitleElement.textContent = tvShowTitle;
+          tvShowTitleElement.classList.add("item-name");
+
+          tvShowItem.appendChild(tvShowImage);
+          tvShowItem.appendChild(tvShowTitleElement);
+
+          tvShowsContainer.appendChild(tvShowItem);
+        });
+      });
     </script>
     <script src="js/stitch.js"></script>
   </body>

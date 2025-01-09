@@ -7,8 +7,14 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Mansalva&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Mansalva&family=Salsa&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mansalva&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mansalva&family=Salsa&display=swap"
+      rel="stylesheet"
+    />
     <!-- Styles -->
     <link rel="stylesheet" href="css/stitch.css" />
     <link rel="stylesheet" href="css/containers.css" />
@@ -27,8 +33,14 @@
             <li><a href="movies.html" class="nav-buttons">Movies</a></li>
             <li><a href="shorts.html" class="nav-buttons">Shorts</a></li>
             <li><a href="tvshows.html" class="nav-buttons">TV Shows</a></li>
-            <li><a href="videogames.html" class="nav-buttons">Video Games</a></li>
-            <li><a href="parkattractions.html" class="nav-buttons">Park Attractions</a></li>
+            <li>
+              <a href="videogames.html" class="nav-buttons">Video Games</a>
+            </li>
+            <li>
+              <a href="parkattractions.html" class="nav-buttons"
+                >Park Attractions</a
+              >
+            </li>
           </ul>
         </div>
       </nav>
@@ -50,9 +62,32 @@
     </footer>
     <!-- Scripts -->
     <script>
-      const imagePathMap = {
-        "The Origin of Stitch": "images/originOfStitch.png",
-      };
+      document.addEventListener("DOMContentLoaded", () => {
+        const imagePathMap = {
+          "The Origin of Stitch": "images/originOfStitch.png",
+        };
+
+        const shortFilmsContainer = document.querySelector(".shortFilms-grid");
+
+        Object.keys(imagePathMap).forEach((shortFilmTitle) => {
+          const shortFilmItem = document.createElement("li");
+          shortFilmItem.classList.add("shortFilms-item");
+
+          const shortFilmImage = document.createElement("img");
+          shortFilmImage.src = imagePathMap[shortFilmTitle];
+          shortFilmImage.alt = shortFilmTitle;
+          shortFilmImage.classList.add("item-image");
+
+          const shortFilmTitleElement = document.createElement("p");
+          shortFilmTitleElement.textContent = shortFilmTitle;
+          shortFilmTitleElement.classList.add("item-name");
+
+          shortFilmItem.appendChild(shortFilmImage);
+          shortFilmItem.appendChild(shortFilmTitleElement);
+
+          shortFilmsContainer.appendChild(shortFilmItem);
+        });
+      });
     </script>
     <script src="js/stitch.js"></script>
   </body>

@@ -7,8 +7,14 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Mansalva&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Mansalva&family=Salsa&display=swap" rel="stylesheet"/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mansalva&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mansalva&family=Salsa&display=swap"
+      rel="stylesheet"
+    />
     <!-- Styles -->
     <link rel="stylesheet" href="css/stitch.css" />
     <link rel="stylesheet" href="css/containers.css" />
@@ -27,8 +33,14 @@
             <li><a href="movies.html" class="nav-buttons">Movies</a></li>
             <li><a href="shorts.html" class="nav-buttons">Shorts</a></li>
             <li><a href="tvshows.html" class="nav-buttons">TV Shows</a></li>
-            <li><a href="videogames.html" class="nav-buttons">Video Games</a></li>
-            <li><a href="parkattractions.html" class="nav-buttons">Park Attractions</a></li>
+            <li>
+              <a href="videogames.html" class="nav-buttons">Video Games</a>
+            </li>
+            <li>
+              <a href="parkattractions.html" class="nav-buttons"
+                >Park Attractions</a
+              >
+            </li>
           </ul>
         </div>
       </nav>
@@ -50,23 +62,49 @@
     </footer>
     <!-- Scripts -->
     <script>
-      const imagePathMap = {
-        "Lilo & Stitch": "images/liloStitch.png",
-        "Lilo & Stitch 2: Stitch Has a Glitch":
-          "images/liloStitch2hasaglitch.jpg",
-        "Stitch! The Movie": "images/stitchTheMovie.png",
-        "Leroy & Stitch": "images/leroyAndStitch.png",
-        "Lilo & Stitch (live-action film)": "images/noImage.jpg",
-      };
-      const excludeMovies = [
-        "Treasure Planet",
-        "Brother Bear",
-        "Outtakes",
-        "The Lion King 1½",
-        "Once Upon a Halloween",
-        "Big Hero 6",
-        "Ralph Breaks the Internet",
-      ];
+      document.addEventListener("DOMContentLoaded", () => {
+        const imagePathMap = {
+          "Lilo & Stitch": "images/liloStitch.png",
+          "Lilo & Stitch 2: Stitch Has a Glitch":
+            "images/liloStitch2hasaglitch.jpg",
+          "Stitch! The Movie": "images/stitchTheMovie.png",
+          "Leroy & Stitch": "images/leroyAndStitch.png",
+          "Lilo & Stitch (live-action film)": "images/noImage.jpg",
+        };
+
+        const excludeMovies = [
+          "Treasure Planet",
+          "Brother Bear",
+          "Outtakes",
+          "The Lion King 1½",
+          "Once Upon a Halloween",
+          "Big Hero 6",
+          "Ralph Breaks the Internet",
+        ];
+
+        const filmsContainer = document.querySelector(".films-grid");
+
+        Object.keys(imagePathMap).forEach((movieTitle) => {
+          if (excludeMovies.includes(movieTitle)) return;
+
+          const filmItem = document.createElement("li");
+          filmItem.classList.add("films-item");
+
+          const filmImage = document.createElement("img");
+          filmImage.src = imagePathMap[movieTitle];
+          filmImage.alt = movieTitle;
+          filmImage.classList.add("item-image");
+
+          const filmTitle = document.createElement("p");
+          filmTitle.textContent = movieTitle;
+          filmTitle.classList.add("item-name");
+
+          filmItem.appendChild(filmImage);
+          filmItem.appendChild(filmTitle);
+
+          filmsContainer.appendChild(filmItem);
+        });
+      });
     </script>
     <script src="js/stitch.js"></script>
   </body>

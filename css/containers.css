@@ -5,7 +5,6 @@
     border-radius: 5px;
     margin-bottom: 10px;
     object-fit: cover;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .item-name {
@@ -16,7 +15,12 @@
     margin-top: 5px;
 }
 
-.table-container {
+/* Container para grid */
+.films-grid,
+.shortFilms-grid,
+.tvShows-grid,
+.videoGames-grid,
+.parkAttractions-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -24,120 +28,57 @@
     width: 100%;
 }
 
-.table-row {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    width: calc(50% - 10px);
-    margin-bottom: 20px;
-}
-
-.table-cell {
-    flex: 0 1 calc(25.25% - 20px);
-    width: 100%;
-    background-color: #A2E2E6;
-    border: 1px solid darkblue;
+/* Estilo dos itens */
+.films-grid > li,
+.shortFilms-grid > li,
+.tvShows-grid > li,
+.videoGames-grid > li,
+.parkAttractions-grid > li {
+    flex: 0 1 calc(25% - 20px); /* 4 itens por linha */
+    max-width: calc(25% - 20px); /* Limita a largura */
+    background-color: lightblue;
+    border: 2px solid darkblue;
     border-radius: 5px;
     padding: 10px;
-    box-sizing: border-box;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-}
-
-.table-cell:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* movies */
-.films-container {
-    display: flex;
-    flex-wrap: wrap;
-    width: 50%;
-}
-
-.films-item {
-    background-color: #f0f8ff;
-    flex: 0 1 calc(25% - 20px);
     box-sizing: border-box;
-    padding: 10px;
-    text-align: center;
-    border-radius: 5px;
-    border: 1px solid #add8e6;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    list-style: none;
 }
 
-.films-item:hover {
+.films-grid > li:hover,
+.shortFilms-grid > li:hover,
+.tvShows-grid > li:hover,
+.videoGames-grid > li:hover,
+.parkAttractions-grid > li:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 
-.films-item .item-image {
+/* Estilo das imagens dentro dos itens */
+.films-grid > li .item-image,
+.shortFilms-grid > li .item-image,
+.tvShows-grid > li .item-image,
+.videoGames-grid > li .item-image,
+.parkAttractions-grid > li .item-image {
     height: 150px;
     width: auto;
     display: block;
     margin: 0 auto 10px;
     border-radius: 5px;
-    border: 2px solid #add8e6;
+    border: 2px solid darkblue;
     object-fit: cover;
 }
 
-.films-item .item-text {
-    color: #000080;
+/* Estilo do texto dentro dos itens */
+.films-grid > li .item-name,
+.shortFilms-grid > li .item-name,
+.tvShows-grid > li .item-name,
+.videoGames-grid > li .item-name,
+.parkAttractions-grid > li .item-name {
     font-size: 14px;
     font-family: Roboto, sans-serif;
     margin-top: 5px;
-}
-
-/* short films */
-.shortFilms-item {
-    background-color: #fffacd;
-}
-
-.shortFilms-item .item-image {
-    border: 2px solid #ffd700;
-}
-
-.shortFilms-item .item-text {
-    color: #ff4500;
-}
-
-/* tv shows */
-.tvShows-item {
-    background-color: #e6e6fa;
-}
-
-.tvShows-item .item-image {
-    border: 2px solid #dda0dd;
-}
-
-.tvShows-item .item-text {
-    color: #800080;
-}
-
-/* videogames */
-.videoGames-item {
-    background-color: #e0ffff;
-}
-
-.videoGames-item .item-image {
-    border: 2px solid #20b2aa;
-}
-
-.videoGames-item .item-text {
-    color: #008080;
-}
-
-/* park attractions */
-.parkAttractions-item {
-    background-color: #fff5ee;
-}
-
-.parkAttractions-item .item-image {
-    border: 2px solid #ff6347;
-}
-
-.parkAttractions-item .item-text {
-    color: #b22222;
+    color: #000080;
 }

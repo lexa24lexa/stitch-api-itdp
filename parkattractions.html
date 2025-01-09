@@ -7,8 +7,14 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Mansalva&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Mansalva&family=Salsa&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mansalva&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mansalva&family=Salsa&display=swap"
+      rel="stylesheet"
+    />
     <!-- Styles -->
     <link rel="stylesheet" href="css/stitch.css" />
     <link rel="stylesheet" href="css/containers.css" />
@@ -27,8 +33,14 @@
             <li><a href="movies.html" class="nav-buttons">Movies</a></li>
             <li><a href="shorts.html" class="nav-buttons">Shorts</a></li>
             <li><a href="tvshows.html" class="nav-buttons">TV Shows</a></li>
-            <li><a href="videogames.html" class="nav-buttons">Video Games</a></li>
-            <li><a href="parkattractions.html" class="nav-buttons">Park Attractions</a></li>
+            <li>
+              <a href="videogames.html" class="nav-buttons">Video Games</a>
+            </li>
+            <li>
+              <a href="parkattractions.html" class="nav-buttons"
+                >Park Attractions</a
+              >
+            </li>
           </ul>
         </div>
       </nav>
@@ -50,24 +62,48 @@
     </footer>
     <!-- Scripts -->
     <script>
-      const imagePathMap = {
-        "Stitch's Great Escape!": "images/greatEscape.jpg",
-        "Stitch's Supersonic Celebration": "images/supersonicCelebration.jpg",
-        "Fantasmic!": "images/noImage.jpg",
-        "The Enchanted Tiki Room: Stitch Presents Aloha e Komo Mai!":
-          "images/tikiRoom.jpg",
-        "Stitch Encounter": "images/encounter.jpg",
-        "Celebrate a Dreams Come True Parade": "images/dreamsParade.jpg",
-        "Disney Stars and Motorcars Parade": "images/motorcarsParade.jpg",
-        "It's a Small World": "images/smallWorld.jpg",
-        "The Golden Mickeys": "images/goldenMickeys.jpg",
-        "World of Color": "images/worldOfColor.jpg",
-        "Celebrate the Magic": "images/celebrateMagic.jpg",
-        "Mickey and the Magical Map": "images/magicalMap.jpg",
-        "Fashionable Easter": "images/noImage.jpg",
-        "Halloween Pop'n LIVE": "images/halloweenPop.jpg",
-        "Wonderful World of Animation": "images/noImage.jpg",
-      };
+      document.addEventListener("DOMContentLoaded", () => {
+        const imagePathMap = {
+          "Stitch's Great Escape!": "images/greatEscape.jpg",
+          "Stitch's Supersonic Celebration": "images/supersonicCelebration.jpg",
+          "Fantasmic!": "images/noImage.jpg",
+          "The Enchanted Tiki Room: Stitch Presents Aloha e Komo Mai!":
+            "images/tikiRoom.jpg",
+          "Stitch Encounter": "images/encounter.jpg",
+          "Celebrate a Dreams Come True Parade": "images/dreamsParade.jpg",
+          "Disney Stars and Motorcars Parade": "images/motorcarsParade.jpg",
+          "It's a Small World": "images/smallWorld.jpg",
+          "The Golden Mickeys": "images/goldenMickeys.jpg",
+          "World of Color": "images/worldOfColor.jpg",
+          "Celebrate the Magic": "images/celebrateMagic.jpg",
+          "Mickey and the Magical Map": "images/magicalMap.jpg",
+          "Fashionable Easter": "images/noImage.jpg",
+          "Halloween Pop'n LIVE": "images/halloweenPop.jpg",
+          "Wonderful World of Animation": "images/noImage.jpg",
+        };
+
+        const parkAttractionsContainer = document.querySelector(
+          ".parkAttractions-grid"
+        );
+
+        Object.keys(imagePathMap).forEach((attractionName) => {
+          const attractionItem = document.createElement("li");
+          attractionItem.classList.add("parkAttractions-item");
+
+          const attractionImage = document.createElement("img");
+          attractionImage.src = imagePathMap[attractionName];
+          attractionImage.alt = attractionName;
+          attractionImage.classList.add("item-image");
+
+          const attractionTitle = document.createElement("p");
+          attractionTitle.textContent = attractionName;
+          attractionTitle.classList.add("item-name");
+
+          attractionItem.appendChild(attractionImage);
+          attractionItem.appendChild(attractionTitle);
+          parkAttractionsContainer.appendChild(attractionItem);
+        });
+      });
     </script>
     <script src="js/stitch.js"></script>
   </body>
