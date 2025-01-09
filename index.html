@@ -1,82 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Movies - Stitch</title>
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Mansalva&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Mansalva&family=Salsa&display=swap" rel="stylesheet"/>
-    <!-- Styles -->
-    <link rel="stylesheet" href="css/stitch.css" />
-    <link rel="stylesheet" href="css/nav.css" />
-    <link rel="stylesheet" href="css/containers.css" />
-  </head>
-  <body>
-    <!-- Navbar -->
-    <header>
-      <nav class="navbar">
-        <section class="navbar-container">
-          <div class="navbar-brand">
-            <p class="stitch-nav">Stitch</p>
-            <img src="images/stitchLogo.png" class="logo" alt="logo" />
-          </div>
-          <nav class="navbar-menu-main" id="navMenu">
-            <a href="index.html" class="nav-buttons">Stitch home</a>
-            <a href="movies.html" class="nav-buttons">Movies</a>
-            <a href="shorts.html" class="nav-buttons">Shorts</a>
-            <a href="tvshows.html" class="nav-buttons">TV Shows</a>
-            <a href="videogames.html" class="nav-buttons">Video Games</a>
-            <a href="parkattractions.html" class="nav-buttons">Park Attractions</a>
-          </nav>
-        </section>
-      </nav>
-    </header>
-    <!-- Main Content -->
-    <main>
-      <section class="content-div">
-        <h1>
-          "Ohana Means Family. Family Means Nobody Gets Left Behind Or
-          Forgotten."
-        </h1>
-        <section class="dropdown">
-          <button class="dropbtn">
-            Search for...
-            <i class="fa fa-caret-down"></i>
-          </button>
-          <nav class="dropdown-content">
-            <a href="movies.html">Movies</a>
-            <a href="shorts.html">Shorts</a>
-            <a href="tvshows.html">TV Shows</a>
-            <a href="videogames.html">Video Games</a>
-            <a href="parkattractions.html">Park Attractions</a>
-          </nav>
-        </section>
-        <img
-          src="images/runningStitch.gif"
-          class="runningStitchGif"
-          alt="stitch running"
-        />
-        <img
-          src="images/stitchLingua.gif"
-          class="stitchLinguaGif"
-          alt="stitch showing his tongue"
-        />
-      </section>
-    </main>
-    <!-- Footer -->
-    <footer class="footer">
-      <section>
-        <p>@2024 Made by Alexandra Smirnova.</p>
-      </section>
-    </footer>
-    <!-- External JavaScript -->
-    <script src="{{ asset('js/stitch.js') }}"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-      });
-    </script>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stitch website</title>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Mansalva&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Mansalva&family=Salsa&display=swap" rel="stylesheet"/>
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/stitch.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/containers.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="navbar-container">
+        <div class="navbar-brand">
+          <p class="stitch-nav">Stitch</p>
+          <img src="images/stitchLogo.png" class="logo" alt="logo" />
+        </div>
+        <ul class="navbar-menu-main" id="navMenu">
+          <li><a href="index.html" class="nav-buttons">Stitch home</a></li>
+          <li><a href="movies.html" class="nav-buttons">Movies</a></li>
+          <li><a href="shorts.html" class="nav-buttons">Shorts</a></li>
+          <li><a href="tvshows.html" class="nav-buttons">TV Shows</a></li>
+          <li><a href="videogames.html" class="nav-buttons">Video Games</a></li>
+          <li><a href="parkattractions.html" class="nav-buttons">Park Attractions</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- Main Content -->
+  <main>
+    <article>
+      <h1>
+        "Ohana Means Family. Family Means Nobody Gets Left Behind Or Forgotten."
+      </h1>
+      <div class="dropdown">
+        <button class="dropbtn">
+          Search for...
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <ul class="dropdown-content">
+          <li><a href="movies.html">Movies</a></li>
+          <li><a href="shorts.html">Shorts</a></li>
+          <li><a href="tvshows.html">TV Shows</a></li>
+          <li><a href="videogames.html">Video Games</a></li>
+          <li><a href="parkattractions.html">Park Attractions</a></li>
+        </ul>
+      </div>
+      <img src="images/runningStitch.gif" class="runningStitchGif" alt="stitch running" />
+      <img src="images/stitchLingua.gif" class="stitchLinguaGif" alt="stitch showing his tongue" />
+    </article>
+  </main>
+  <!-- Footer -->
+  <footer class="footer">
+    <p>@2024 Made by Alexandra Smirnova.</p>
+  </footer>
+  <!-- External JavaScript -->
+  <script src="{{ asset('js/stitch.js') }}"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {});
+  </script>
+</body>
 </html>
