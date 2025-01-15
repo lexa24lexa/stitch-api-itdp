@@ -59,5 +59,6 @@
 .footer {
     text-align: center;
     font-family: Roboto, sans-serif;
-    height: 15px;
+    height: 23px;
+    background-color: lightblue;
 }
