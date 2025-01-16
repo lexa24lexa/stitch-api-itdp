@@ -780,6 +780,11 @@ video {
   border-color: rgb(173 216 230 / var(--tw-border-opacity, 1));
 }
 
+.border-pink-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(236 72 153 / var(--tw-border-opacity, 1));
+}
+
 .bg-lightblue {
   --tw-bg-opacity: 1;
   background-color: rgb(173 216 230 / var(--tw-bg-opacity, 1));
@@ -797,6 +802,11 @@ video {
 
 .bg-white\/50 {
   background-color: rgb(255 255 255 / 0.5);
+}
+
+.bg-pink-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(252 231 243 / var(--tw-bg-opacity, 1));
 }
 
 .bg-opacity-50 {
@@ -919,6 +929,11 @@ video {
 .text-darkblue {
   --tw-text-opacity: 1;
   color: rgb(22 55 108 / var(--tw-text-opacity, 1));
+}
+
+.text-red-600 {
+  --tw-text-opacity: 1;
+  color: rgb(220 38 38 / var(--tw-text-opacity, 1));
 }
 
 .shadow-lg {
