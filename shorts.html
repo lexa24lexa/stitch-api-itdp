@@ -3,37 +3,64 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Movies - Stitch</title>
+    <title>Stitch</title>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Mansalva&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Mansalva&family=Salsa&display=swap" rel="stylesheet"/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mansalva&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mansalva&family=Salsa&display=swap"
+      rel="stylesheet"
+    />
     <!-- Styles -->
     <link rel="stylesheet" href="css/stitch.css" />
-    <link rel="stylesheet" href="css/nav.css" />
     <link rel="stylesheet" href="css/containers.css" />
+    <link rel="stylesheet" href="css/output.css" />
   </head>
   <body>
-    <header>
-      <!-- Navbar -->
-      <nav class="navbar">
-        <section class="navbar-container">
-          <div class="navbar-brand">
-            <p class="stitch-nav">Stitch</p>
-            <img src="images/stitchLogo.png" class="logo" alt="logo" />
-          </div>
-          <nav class="navbar-menu-main" id="navMenu">
-            <a href="index.html" class="nav-buttons">Stitch home</a>
-            <a href="movies.html" class="nav-buttons">Movies</a>
-            <a href="shorts.html" class="nav-buttons">Shorts</a>
-            <a href="tvshows.html" class="nav-buttons">TV Shows</a>
-            <a href="videogames.html" class="nav-buttons">Video Games</a>
-            <a href="parkattractions.html" class="nav-buttons">Park Attractions</a>
-          </nav>
-        </section>
-      </nav>
+    <!-- Navbar -->
+    <header class="bg-lightblue shadow-lg">
+      <div class="flex justify-between items-center px-5">
+        <!-- Brand -->
+        <div class="flex items-center gap-3">
+          <p class="font-mansalva text-2xl">Stitch</p>
+          <img src="images/stitchLogo.png" class="h-9" alt="logo" />
+        </div>
+        <!-- Nav Links -->
+        <ul class="hidden md:flex gap-4 text-lg">
+          <li>
+            <a href="index.html" class="hover:text-darkblue transition"
+              >Stitch home</a
+            >
+          </li>
+          <li>
+            <a href="movies.html" class="hover:text-darkblue transition">Movies</a>
+          </li>
+          <li>
+            <a href="shorts.html" class="hover:text-darkblue transition">Shorts</a>
+          </li>
+          <li>
+            <a href="tvshows.html" class="hover:text-darkblue transition"
+              >TV Shows</a
+            >
+          </li>
+          <li>
+            <a href="videogames.html" class="hover:text-darkblue transition"
+              >Video Games</a
+            >
+          </li>
+          <li>
+            <a href="parkattractions.html" class="hover:text-darkblue transition"
+              >Park Attractions</a
+            >
+          </li>
+        </ul>
+      </div>
     </header>
+    
     <!-- Main Content -->
     <main class="content-div">
       <section id="shortFilms-container">
@@ -44,10 +71,8 @@
       </section>
     </main>
     <!-- Footer -->
-    <footer class="footer">
-      <section>
-        <p>@2024 Made by Alexandra Smirnova.</p>
-      </section>
+    <footer class="text-center bg-lightblue py-1">
+      <p class="font-roboto text-sm">@2024 Made by Alexandra Smirnova.</p>
     </footer>
     <!-- Scripts -->
     <script>
