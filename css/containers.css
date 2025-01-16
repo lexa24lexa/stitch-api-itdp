@@ -37,27 +37,6 @@
     margin-bottom: 20px;
 }
 
-/* movies */
-.films-container {
-    display: flex;
-    flex-wrap: wrap;
-    width: 50%;
-}
-
-.films-item {
-    background-color: #f0f8ff;
-    flex: 50%;
-    box-sizing: border-box;
-}
-
-.films-item .item-image {
-    border: 2px solid #add8e6;
-}
-
-.films-item .item-text {
-    color: #000080;
-}
-
 /* short films */
 .shortFilms-item {
     background-color: #fffacd;
