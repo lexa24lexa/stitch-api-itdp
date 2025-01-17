@@ -19,6 +19,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
       rel="stylesheet"
     />
+    <!-- Styles -->
     <link rel="stylesheet" href="css/stitch.css" />
     <link rel="stylesheet" href="css/output.css" />
   </head>
@@ -33,7 +34,7 @@
           <img src="images/stitchLogo.png" class="h-9" alt="logo" />
         </a>
 
-        <!-- Hamburger Menu -->
+        <!-- Hamburger Menu Button -->
         <button
           id="menu-btn"
           class="block md:hidden text-darkblue focus:outline-none"
@@ -44,7 +45,7 @@
         <!-- Nav Links -->
         <ul
           id="menu"
-          class="hidden md:flex gap-4 text-lg flex-col md:flex-row bg-white md:bg-transparent w-full md:w-auto top-16 left-0 shadow-md md:shadow-none z-50"
+          class="hidden md:flex gap-4 text-lg flex-col md:flex-row absolute md:static bg-white md:bg-transparent w-full md:w-auto top-16 left-0 shadow-md md:shadow-none z-50"
         >
           <li>
             <a href="index.html" class="block px-4 py-2 hover:text-darkblue"
@@ -85,67 +86,73 @@
     </header>
 
     <!-- Main Content -->
-    <main
-      class="relative bg-[url('../images/computerbackground.jpg')] bg-cover bg-center min-h-screen border-x-8 border-white"
-    >
-      <!-- Overlay -->
-      <div class="absolute inset-0 bg-white/50"></div>
+    <main>
+      <section
+        class="relative bg-[url('../images/computerbackground.jpg')] bg-cover bg-center min-h-[calc(98vh-50px)] border-x-8 border-white"
+      >
+        <!-- Background Overlay -->
+        <div class="absolute inset-0 bg-white/50"></div>
 
-      <!-- Main Section -->
-      <section class="relative z-10 text-center px-5 py-10">
-        <h1 class="text-darkblue font-salsa text-3xl md:text-4xl tracking-wide">
-          "Ohana Means Family. Family Means Nobody Gets Left Behind Or
-          Forgotten."
-        </h1>
-
-        <!-- Running Stitch Image -->
-        <img
-          src="images/runningStitch.gif"
-          class="w-40 mx-auto mt-8"
-          alt="stitch running"
-        />
-
-        <!-- Dropdown -->
-        <div class="relative mx-auto mt-5">
-          <button
-            class="dropbtn bg-teal text-black text-lg px-4 py-2 rounded hover:bg-teal/90"
+        <!-- Main Content -->
+        <div class="relative z-10 text-center">
+          <h1
+            class="text-darkblue font-salsa text-3xl md:text-4xl tracking-wide pt-16"
           >
-            Search for...
-            <i class="fa fa-caret-down"></i>
-          </button>
-          <ul
-            class="dropdown-content absolute hidden bg-white text-black mt-2 shadow-lg w-full rounded"
-          >
-            <li>
-              <a href="movies.html" class="block px-4 py-2 hover:bg-lightblue"
-                >Movies</a
-              >
-            </li>
-            <li>
-              <a href="shorts.html" class="block px-4 py-2 hover:bg-lightblue"
-                >Shorts</a
-              >
-            </li>
-            <li>
-              <a href="tvshows.html" class="block px-4 py-2 hover:bg-lightblue"
-                >TV Shows</a
-              >
-            </li>
-            <li>
-              <a
-                href="videogames.html"
-                class="block px-4 py-2 hover:bg-lightblue"
-                >Video Games</a
-              >
-            </li>
-            <li>
-              <a
-                href="parkattractions.html"
-                class="block px-4 py-2 hover:bg-lightblue"
-                >Park Attractions</a
-              >
-            </li>
-          </ul>
+            "Ohana Means Family. Family Means Nobody Gets Left Behind Or
+            Forgotten."
+          </h1>
+
+          <!-- Running Stitch Image -->
+          <img
+            src="images/runningStitch.gif"
+            class="w-40 mx-auto mt-8"
+            alt="stitch running"
+          />
+
+          <!-- Dropdown -->
+          <div class="relative mx-auto mt-5 sm:mt-0">
+            <button
+              class="dropbtn bg-teal text-black text-lg px-4 py-2 rounded hover:bg-teal/90"
+            >
+              Search for...
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <ul
+              class="dropdown-content absolute hidden bg-white text-black mt-2 shadow-lg w-full sm:w-auto rounded text-center left-1/2 transform -translate-x-1/2"
+            >
+              <li>
+                <a href="movies.html" class="block px-4 py-2 hover:bg-lightblue"
+                  >Movies</a
+                >
+              </li>
+              <li>
+                <a href="shorts.html" class="block px-4 py-2 hover:bg-lightblue"
+                  >Shorts</a
+                >
+              </li>
+              <li>
+                <a
+                  href="tvshows.html"
+                  class="block px-4 py-2 hover:bg-lightblue"
+                  >TV Shows</a
+                >
+              </li>
+              <li>
+                <a
+                  href="videogames.html"
+                  class="block px-4 py-2 hover:bg-lightblue"
+                  >Video Games</a
+                >
+              </li>
+              <li>
+                <a
+                  href="parkattractions.html"
+                  class="block px-4 py-2 hover:bg-lightblue"
+                  >Park Attractions</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
     </main>
@@ -166,16 +173,25 @@
         const dropbtn = document.querySelector(".dropbtn");
         const dropdownContent = document.querySelector(".dropdown-content");
 
-        dropbtn.addEventListener("click", function () {
-          dropdownContent.classList.toggle("hidden");
+        if (!dropbtn || !dropdownContent) {
+          console.error("Dropdown elements not found in the DOM.");
+          return;
+        }
+
+        dropbtn.addEventListener("click", function (event) {
+          event.stopPropagation();
+          const isVisible = dropdownContent.classList.contains("active");
+          dropdownContent.classList.toggle("active", !isVisible);
+          dropdownContent.style.display = isVisible ? "none" : "block";
         });
 
         document.addEventListener("click", function (event) {
           if (
-            !dropbtn.contains(event.target) &&
-            !dropdownContent.contains(event.target)
+            !dropdownContent.contains(event.target) &&
+            dropdownContent.classList.contains("active")
           ) {
-            dropdownContent.classList.add("hidden");
+            dropdownContent.classList.remove("active");
+            dropdownContent.style.display = "none";
           }
         });
       });
@@ -189,6 +205,5 @@
         });
       });
     </script>
-    <script src="js/stitch.js"></script>
   </body>
 </html>
