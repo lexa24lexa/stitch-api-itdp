@@ -25,6 +25,11 @@ const excludeMovies = [
 
 const excludeShortFilms = [];
 
+const excludeTVShows = [
+  "A Poem Is...",
+  "It's a Small World: The Animated Series",
+];
+
 const excludeAttractions = [
   "It's a Small World",
   "The Golden Mickeys",
@@ -33,6 +38,7 @@ const excludeAttractions = [
   "Wonderful World of Animation",
 ];
 
+// Movies
 async function displayMovies() {
   const data = await fetchCharacterData();
   const moviesGrid = document.getElementById("movies-grid");
@@ -67,6 +73,7 @@ async function displayMovies() {
   });
 }
 
+// Short Films
 async function displayShortFilms() {
   const data = await fetchCharacterData();
   const shortFilmsGrid = document.getElementById("shortFilms-grid");
@@ -85,17 +92,17 @@ async function displayShortFilms() {
   shortFilms.forEach((film) => {
     const shortFilmCard = document.createElement("div");
     shortFilmCard.className =
-      "bg-teal rounded-lg shadow-lg p-4 flex flex-col items-center";
+      "bg-yellow-100 rounded-lg shadow-lg p-4 flex flex-col items-center";
 
     const filmImage = document.createElement("img");
     filmImage.src = imagePathMap[film] || "images/noImage.jpg";
     filmImage.alt = film;
     filmImage.className =
-      "h-40 w-auto rounded mb-4 border-2 border-lightblue";
+      "h-40 w-auto rounded mb-4 border-2 border-yellow-500";
 
     const filmTitle = document.createElement("p");
     filmTitle.textContent = film;
-    filmTitle.className = "text-darkblue text-lg font-roboto";
+    filmTitle.className = "text-orange-500 text-lg font-roboto";
 
     shortFilmCard.appendChild(filmImage);
     shortFilmCard.appendChild(filmTitle);
@@ -103,6 +110,44 @@ async function displayShortFilms() {
   });
 }
 
+// TV Shows
+async function displayTVShows() {
+  const data = await fetchCharacterData();
+  const tvShowsGrid = document.getElementById("tvShows-grid");
+
+  tvShowsGrid.innerHTML = "";
+
+  if (!data || !data.data || !data.data.tvShows) {
+    tvShowsGrid.innerHTML = `<p class="text-darkblue">No TV shows found or failed to fetch data.</p>`;
+    return;
+  }
+
+  const tvShows = data.data.tvShows.filter(
+    (show) => !excludeTVShows.includes(show)
+  );
+
+  tvShows.forEach((show) => {
+    const tvShowCard = document.createElement("div");
+    tvShowCard.className =
+      "bg-blue-100 rounded-lg shadow-lg p-4 flex flex-col items-center";
+
+    const showImage = document.createElement("img");
+    showImage.src = imagePathMap[show] || "images/noImage.jpg";
+    showImage.alt = show;
+    showImage.className =
+      "h-40 w-auto rounded mb-4 border-2 border-blue-500";
+
+    const showTitle = document.createElement("p");
+    showTitle.textContent = show;
+    showTitle.className = "text-blue-600 text-lg font-roboto";
+
+    tvShowCard.appendChild(showImage);
+    tvShowCard.appendChild(showTitle);
+    tvShowsGrid.appendChild(tvShowCard);
+  });
+}
+
+// Park Attractions
 async function displayParkAttractions() {
   const data = await fetchCharacterData();
   const parkAttractionsGrid = document.getElementById("parkAttractions-grid");
@@ -139,8 +184,10 @@ async function displayParkAttractions() {
   });
 }
 
+// Execute all displays
 document.addEventListener("DOMContentLoaded", () => {
   displayMovies();
   displayShortFilms();
+  displayTVShows();
   displayParkAttractions();
 });
