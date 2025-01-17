@@ -23,6 +23,8 @@ const excludeMovies = [
   "Ralph Breaks the Internet",
 ];
 
+const excludeShortFilms = [];
+
 const excludeAttractions = [
   "It's a Small World",
   "The Golden Mickeys",
@@ -65,6 +67,42 @@ async function displayMovies() {
   });
 }
 
+async function displayShortFilms() {
+  const data = await fetchCharacterData();
+  const shortFilmsGrid = document.getElementById("shortFilms-grid");
+
+  shortFilmsGrid.innerHTML = "";
+
+  if (!data || !data.data || !data.data.shortFilms) {
+    shortFilmsGrid.innerHTML = `<p class="text-darkblue">No short films found or failed to fetch data.</p>`;
+    return;
+  }
+
+  const shortFilms = data.data.shortFilms.filter(
+    (film) => !excludeShortFilms.includes(film)
+  );
+
+  shortFilms.forEach((film) => {
+    const shortFilmCard = document.createElement("div");
+    shortFilmCard.className =
+      "bg-teal rounded-lg shadow-lg p-4 flex flex-col items-center";
+
+    const filmImage = document.createElement("img");
+    filmImage.src = imagePathMap[film] || "images/noImage.jpg";
+    filmImage.alt = film;
+    filmImage.className =
+      "h-40 w-auto rounded mb-4 border-2 border-lightblue";
+
+    const filmTitle = document.createElement("p");
+    filmTitle.textContent = film;
+    filmTitle.className = "text-darkblue text-lg font-roboto";
+
+    shortFilmCard.appendChild(filmImage);
+    shortFilmCard.appendChild(filmTitle);
+    shortFilmsGrid.appendChild(shortFilmCard);
+  });
+}
+
 async function displayParkAttractions() {
   const data = await fetchCharacterData();
   const parkAttractionsGrid = document.getElementById("parkAttractions-grid");
@@ -103,5 +141,6 @@ async function displayParkAttractions() {
 
 document.addEventListener("DOMContentLoaded", () => {
   displayMovies();
+  displayShortFilms();
   displayParkAttractions();
 });

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Stitch</title>
+    <title>Stitch - Movies</title>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,70 +15,87 @@
       href="https://fonts.googleapis.com/css2?family=Mansalva&family=Salsa&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
     <!-- Styles -->
-    <link rel="stylesheet" href="css/stitch.css" />
-    <link rel="stylesheet" href="css/containers.css" />
     <link rel="stylesheet" href="css/output.css" />
   </head>
   <body>
     <!-- Navbar -->
-    <header class="bg-lightblue shadow-lg">
-      <div class="flex justify-between items-center px-5">
+    <header class="bg-lightblue shadow-lg px-5">
+      <nav class="flex justify-between items-center">
         <!-- Brand -->
-        <div class="flex items-center gap-3">
+        <a href="index.html" class="flex items-center gap-3">
           <p class="font-mansalva text-2xl">Stitch</p>
           <img src="images/stitchLogo.png" class="h-9" alt="logo" />
-        </div>
+        </a>
+
+        <!-- Hamburger Menu Button -->
+        <button
+          id="menu-btn"
+          class="block md:hidden text-darkblue focus:outline-none"
+        >
+          <i class="fa fa-bars text-2xl"></i>
+        </button>
+
         <!-- Nav Links -->
-        <ul class="hidden md:flex gap-4 text-lg">
+        <ul
+          id="menu"
+          class="hidden md:flex gap-4 text-lg flex-col md:flex-row absolute md:static bg-white md:bg-transparent w-full md:w-auto top-16 left-0 shadow-md md:shadow-none z-50"
+        >
+          <li><a href="index.html" class="block px-4 py-2 hover:text-darkblue">Home</a></li>
+          <li><a href="movies.html" class="block px-4 py-2 hover:text-darkblue">Movies</a></li>
+          <li><a href="shorts.html" class="block px-4 py-2 hover:text-darkblue">Shorts</a></li>
+          <li><a href="tvshows.html" class="block px-4 py-2 hover:text-darkblue">TV Shows</a></li>
+          <li><a href="videogames.html" class="block px-4 py-2 hover:text-darkblue">Video Games</a></li>
           <li>
-            <a href="index.html" class="hover:text-darkblue transition"
-              >Stitch home</a
-            >
-          </li>
-          <li>
-            <a href="movies.html" class="hover:text-darkblue transition">Movies</a>
-          </li>
-          <li>
-            <a href="shorts.html" class="hover:text-darkblue transition">Shorts</a>
-          </li>
-          <li>
-            <a href="tvshows.html" class="hover:text-darkblue transition"
-              >TV Shows</a
-            >
-          </li>
-          <li>
-            <a href="videogames.html" class="hover:text-darkblue transition"
-              >Video Games</a
-            >
-          </li>
-          <li>
-            <a href="parkattractions.html" class="hover:text-darkblue transition"
+            <a href="parkattractions.html" class="block px-4 py-2 hover:text-darkblue"
               >Park Attractions</a
             >
           </li>
         </ul>
-      </div>
+      </nav>
     </header>
-    
+
     <!-- Main Content -->
-    <main class="content-div">
-      <section id="shortFilms-container">
-        <h1 class="categories">Short Films</h1>
-        <div class="shortFilms-grid">
+    <main
+      class="relative bg-[url('../images/computerbackground.jpg')] bg-cover bg-center min-h-screen border-x-8 border-white"
+    >
+      <!-- Overlay -->
+      <div class="absolute inset-0 bg-white/50"></div>
+
+      <!-- Shorts Content -->
+      <section id="shortFilms-container" class="relative z-10 text-center px-5 py-10">
+        <h1 class="categories text-darkblue font-salsa text-3xl md:text-4xl mb-8">
+          Short Films
+        </h1>
+        <div id="shortFilms-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <!-- Short films content will go here -->
         </div>
       </section>
     </main>
+
     <!-- Footer -->
     <footer class="text-center bg-lightblue py-1">
-      <p class="font-roboto text-sm">@2024 Made by Alexandra Smirnova.</p>
+      <p class="font-roboto text-sm">@2025 Made by Alexandra Smirnova.</p>
     </footer>
+
     <!-- Scripts -->
     <script>
       const imagePathMap = {
         "The Origin of Stitch": "images/originOfStitch.png",
       };
+    
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuBtn = document.getElementById("menu-btn");
+        const menu = document.getElementById("menu");
+
+        menuBtn.addEventListener("click", () => {
+          menu.classList.toggle("hidden");
+        });
+      });
     </script>
     <script src="js/stitch.js"></script>
   </body>

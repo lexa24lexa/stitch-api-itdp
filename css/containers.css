@@ -75,16 +75,3 @@
 .videoGames-item .item-text {
     color: #008080;
 }
-
-/* park attractions */
-.parkAttractions-item {
-    background-color: #fff5ee;
-}
-
-.parkAttractions-item .item-image {
-    border: 2px solid #ff6347;
-}
-
-.parkAttractions-item .item-text {
-    color: #b22222;
-}
