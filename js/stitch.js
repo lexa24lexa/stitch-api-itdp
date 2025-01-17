@@ -221,11 +221,18 @@ async function displayParkAttractions() {
   });
 }
 
-// Execute all displays
-document.addEventListener("DOMContentLoaded", () => {
-  displayMovies();
-  displayShortFilms();
-  displayTVShows();
-  displayVideoGames();
-  displayParkAttractions();
+// Run all display functions concurrently when the DOM is fully loaded
+document.addEventListener("DOMContentLoaded", async () => {
+  const data = await fetchCharacterData();
+  if (!data) return;
+
+  // Execute all display functions simultaneously with the fetched data
+  await Promise.all([
+    displayMovies(data),
+    displayShortFilms(data),
+    displayTVShows(data),
+    displayVideoGames(data),
+    displayParkAttractions(data),
+  ]);
 });
+
