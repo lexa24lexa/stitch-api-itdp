@@ -52,22 +52,23 @@ async function displayMovies() {
     return;
   }
 
-  const movies = data.data.films.filter((movie) => !excludeMovies.includes(movie));
+  const movies = data.data.films.filter(
+    (movie) => !excludeMovies.includes(movie)
+  );
 
   movies.forEach((movie) => {
     const movieCard = document.createElement("div");
     movieCard.className =
-      "bg-teal rounded-lg shadow-lg p-4 flex flex-col items-center";
+      "bg-[#f0f8ff] rounded-lg shadow-lg p-4 flex flex-col items-center";
 
     const movieImage = document.createElement("img");
     movieImage.src = imagePathMap[movie] || "images/noImage.jpg";
     movieImage.alt = movie;
-    movieImage.className =
-      "h-40 w-auto rounded mb-4 border-2 border-lightblue";
+    movieImage.className = "h-40 w-auto rounded mb-4 border-2 border-[#add8e6]";
 
     const movieTitle = document.createElement("p");
     movieTitle.textContent = movie;
-    movieTitle.className = "text-darkblue text-lg font-roboto";
+    movieTitle.className = "text-[#000080] text-lg font-roboto";
 
     movieCard.appendChild(movieImage);
     movieCard.appendChild(movieTitle);
@@ -94,17 +95,16 @@ async function displayShortFilms() {
   shortFilms.forEach((film) => {
     const shortFilmCard = document.createElement("div");
     shortFilmCard.className =
-      "bg-yellow-100 rounded-lg shadow-lg p-4 flex flex-col items-center";
+      "bg-[#fffacd] rounded-lg shadow-lg p-4 flex flex-col items-center";
 
     const filmImage = document.createElement("img");
     filmImage.src = imagePathMap[film] || "images/noImage.jpg";
     filmImage.alt = film;
-    filmImage.className =
-      "h-40 w-auto rounded mb-4 border-2 border-yellow-500";
+    filmImage.className = "h-40 w-auto rounded mb-4 border-2 border-[#ffd700]";
 
     const filmTitle = document.createElement("p");
     filmTitle.textContent = film;
-    filmTitle.className = "text-orange-500 text-lg font-roboto";
+    filmTitle.className = "text-[#ff4500] text-lg font-roboto";
 
     shortFilmCard.appendChild(filmImage);
     shortFilmCard.appendChild(filmTitle);
@@ -131,17 +131,16 @@ async function displayTVShows() {
   tvShows.forEach((show) => {
     const tvShowCard = document.createElement("div");
     tvShowCard.className =
-      "bg-blue-100 rounded-lg shadow-lg p-4 flex flex-col items-center";
+      "bg-[#e6e6fa] rounded-lg shadow-lg p-4 flex flex-col items-center";
 
     const showImage = document.createElement("img");
     showImage.src = imagePathMap[show] || "images/noImage.jpg";
     showImage.alt = show;
-    showImage.className =
-      "h-40 w-auto rounded mb-4 border-2 border-blue-500";
+    showImage.className = "h-40 w-auto rounded mb-4 border-2 border-[#dda0dd]";
 
     const showTitle = document.createElement("p");
     showTitle.textContent = show;
-    showTitle.className = "text-blue-600 text-lg font-roboto";
+    showTitle.className = "text-[#800080] text-lg font-roboto";
 
     tvShowCard.appendChild(showImage);
     tvShowCard.appendChild(showTitle);
@@ -168,17 +167,16 @@ async function displayVideoGames() {
   videoGames.forEach((game) => {
     const videoGameCard = document.createElement("div");
     videoGameCard.className =
-      "bg-cyan-100 rounded-lg shadow-lg p-4 flex flex-col items-center";
+      "bg-[#e0ffff] rounded-lg shadow-lg p-4 flex flex-col items-center";
 
     const gameImage = document.createElement("img");
     gameImage.src = imagePathMap[game] || "images/noImage.jpg";
     gameImage.alt = game;
-    gameImage.className =
-      "h-40 w-auto rounded mb-4 border-2 border-cyan-500";
+    gameImage.className = "h-40 w-auto rounded mb-4 border-2 border-[#20b2aa]";
 
     const gameTitle = document.createElement("p");
     gameTitle.textContent = game;
-    gameTitle.className = "text-cyan-700 text-lg font-roboto";
+    gameTitle.className = "text-[#008080] text-lg font-roboto";
 
     videoGameCard.appendChild(gameImage);
     videoGameCard.appendChild(gameTitle);
@@ -205,17 +203,17 @@ async function displayParkAttractions() {
   parkAttractions.forEach((attraction) => {
     const attractionCard = document.createElement("div");
     attractionCard.className =
-      "bg-teal rounded-lg shadow-lg p-4 flex flex-col items-center";
+      "bg-[#fff5ee] rounded-lg shadow-lg p-4 flex flex-col items-center";
 
     const attractionImage = document.createElement("img");
     attractionImage.src = imagePathMap[attraction] || "images/noImage.jpg";
     attractionImage.alt = attraction;
     attractionImage.className =
-      "h-40 w-auto rounded mb-4 border-2 border-lightblue";
+      "h-40 w-auto rounded mb-4 border-2 border-[#ff6347]";
 
     const attractionTitle = document.createElement("p");
     attractionTitle.textContent = attraction;
-    attractionTitle.className = "text-darkblue text-lg font-roboto";
+    attractionTitle.className = "text-[#b22222] text-lg font-roboto";
 
     attractionCard.appendChild(attractionImage);
     attractionCard.appendChild(attractionTitle);
