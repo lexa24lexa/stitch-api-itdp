@@ -1,3 +1,19 @@
+<<<<<<< HEAD
+/* GIF Styles */
+.runningStitchGif {
+    position: absolute;
+    top: 185px;
+    right: 650px;
+    width: 150px;
+}
+
+.stitchLinguaGif {
+    position: absolute;
+    bottom: 14px;
+    left: 120px;
+    width: 150px;
+}
+=======
 /* Navbar */
 .navbar-container {
     display: flex;
@@ -175,3 +191,4 @@ h1, .categories {
     background-color: lightblue;
     margin-top: -16px;
 }
+>>>>>>> 6a0ed2c2f787a61ef906188ad36f68aca7d57116

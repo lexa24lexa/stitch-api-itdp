@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Video Games - Stitch</title>
+    <title>Stitch - Video games</title>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,101 +15,133 @@
       href="https://fonts.googleapis.com/css2?family=Mansalva&family=Salsa&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
     <!-- Styles -->
-    <link rel="stylesheet" href="css/stitch.css" />
-    <link rel="stylesheet" href="css/containers.css" />
+    <link rel="stylesheet" href="css/output.css" />
   </head>
   <body>
-    <header>
-      <!-- Navbar -->
-      <nav class="navbar">
-        <div class="navbar-container">
-          <div class="navbar-brand">
-            <p class="stitch-nav">Stitch</p>
-            <img src="images/stitchLogo.png" class="logo" alt="Stitch Logo" />
-          </div>
-          <ul class="navbar-menu-main" id="navMenu">
-            <li><a href="index.html" class="nav-buttons">Stitch home</a></li>
-            <li><a href="movies.html" class="nav-buttons">Movies</a></li>
-            <li><a href="shorts.html" class="nav-buttons">Shorts</a></li>
-            <li><a href="tvshows.html" class="nav-buttons">TV Shows</a></li>
-            <li>
-              <a href="videogames.html" class="nav-buttons">Video Games</a>
-            </li>
-            <li>
-              <a href="parkattractions.html" class="nav-buttons"
-                >Park Attractions</a
-              >
-            </li>
-          </ul>
-        </div>
+    <!-- Navbar -->
+    <header class="bg-lightblue shadow-lg px-5">
+      <nav class="flex justify-between items-center">
+        
+        <!-- Brand -->
+        <a href="index.html" class="flex items-center gap-3">
+          <p class="font-mansalva text-2xl">Stitch</p>
+          <img src="images/stitchLogo.png" class="h-9" alt="logo" />
+        </a>
+
+        <!-- Hamburger Menu Button -->
+        <button
+          id="menu-btn"
+          class="block md:hidden text-darkblue focus:outline-none"
+        >
+          <i class="fa fa-bars text-2xl"></i>
+        </button>
+
+        <!-- Nav Links -->
+        <ul
+          id="menu"
+          class="hidden md:flex gap-4 text-lg flex-col md:flex-row absolute md:static bg-white md:bg-transparent w-full md:w-auto top-16 left-0 shadow-md md:shadow-none z-50"
+        >
+          <li>
+            <a href="index.html" class="block px-4 py-2 hover:text-darkblue"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a href="movies.html" class="block px-4 py-2 hover:text-darkblue"
+              >Movies</a
+            >
+          </li>
+          <li>
+            <a href="shorts.html" class="block px-4 py-2 hover:text-darkblue"
+              >Shorts</a
+            >
+          </li>
+          <li>
+            <a href="tvshows.html" class="block px-4 py-2 hover:text-darkblue"
+              >TV Shows</a
+            >
+          </li>
+          <li>
+            <a
+              href="videogames.html"
+              class="block px-4 py-2 hover:text-darkblue"
+              >Video Games</a
+            >
+          </li>
+          <li>
+            <a
+              href="parkattractions.html"
+              class="block px-4 py-2 hover:text-darkblue"
+              >Park Attractions</a
+            >
+          </li>
+        </ul>
       </nav>
     </header>
+
     <!-- Main Content -->
-    <main class="content-div">
-      <section id="videoGames-container">
-        <h1 class="categories">Video Games</h1>
-        <ul class="videoGames-grid">
+    <main
+      class="relative bg-[url('../images/computerbackground.jpg')] bg-cover bg-center min-h-screen border-x-8 border-white"
+    >
+      <!-- Overlay -->
+      <div class="absolute inset-0 bg-white/50"></div>
+
+      <!-- Video games Content -->
+      <section id="videoGames-container" class="relative z-10 text-center px-5 py-10">
+        <h1 class="categories text-darkblue font-salsa text-3xl md:text-4xl mb-8">Video Games</h1>
+        <div id="videoGames-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <!-- Video games content will go here -->
         </ul>
       </section>
     </main>
+
     <!-- Footer -->
-    <footer class="footer">
-      <div>
-        <p>@2025 Made by Alexandra Smirnova.</p>
-      </div>
+    <footer class="text-center bg-lightblue py-1">
+      <p class="font-roboto text-sm">@2025 Made by Alexandra Smirnova.</p>
     </footer>
+
     <!-- Scripts -->
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const imagePathMap = {
-          "Lilo & Stitch (Game Boy Advance)": "images/gba.jpg",
-          "Lilo & Stitch Pinball": "images/pinball.jpg",
-          "Lilo & Stitch: Trouble in Paradise": "images/troubleInParadise.jpg",
-          "Lilo & Stitch: Hawaiian Adventure": "images/hawaiianAdventure.png",
-          "Disney's Stitch: Experiment 626": "images/experiment626.png",
-          "Lilo & Stitch 2: Hämsterviel Havoc": "images/hamstervielHavoc.jpg",
-          "Kingdom Hearts (series)": "images/kingdomHearts.png",
-          "Stitch Jam": "images/stitchJam.jpg",
-          "Stitch Jam 2": "images/stitchJam2.png",
-          "Disney Friends": "images/disneyFriends.jpg",
-          "Meteos: Disney Magic": "images/meteos.png",
-          "Disney TH!NK Fast": "images/thinkFast.jpg",
-          "Disney Universe": "images/universe.jpg",
-          "Kinect: Disneyland Adventures": "images/disneylandAdventures.jpg",
-          "Disney Infinity (series)": "images/infinity.jpg",
-          "Disney Magical World": "images/magicalWorld.jpg",
-          "Disney Tsum Tsum (game)": "images/tsumTsum.jpg",
-          "Disney Emoji Blitz": "images/emojiBlitz.jpg",
-          "Disney Crossy Road": "images/crossyRoad.jpg",
-          "Disney Magical Dice": "images/magicalDice.jpg",
-          "Disney Magic Kingdoms": "images/magicKingdoms.jpg",
-          "Disney Heroes: Battle Mode": "images/battleMode.jpg",
-          "Disney Epic Quest": "images/noImage.jpg",
-          "Disney Tsum Tsum Festival": "images/tsumTsumFestival.png",
-          "Disney Sorcerer's Arena": "images/sorcerersArena.jpg",
-          "Disney Getaway Blast": "images/getawayBlast.jpg",
-        };
+      const imagePathMap = {
+        "Lilo & Stitch (Game Boy Advance)": "images/gba.jpg",
+        "Lilo & Stitch Pinball": "images/pinball.jpg",
+        "Lilo & Stitch: Trouble in Paradise": "images/troubleInParadise.jpg",
+        "Lilo & Stitch: Hawaiian Adventure": "images/hawaiianAdventure.png",
+        "Disney's Stitch: Experiment 626": "images/experiment626.png",
+        "Lilo & Stitch 2: Hämsterviel Havoc": "images/hamstervielHavoc.jpg",
+        "Kingdom Hearts (series)": "images/kingdomHearts.png",
+        "Stitch Jam": "images/stitchJam.jpg",
+        "Stitch Jam 2": "images/stitchJam2.png",
+        "Disney Friends": "images/disneyFriends.jpg",
+        "Meteos: Disney Magic": "images/meteos.png",
+        "Disney TH!NK Fast": "images/thinkFast.jpg",
+        "Disney Universe": "images/universe.jpg",
+        "Kinect: Disneyland Adventures": "images/disneylandAdventures.jpg",
+        "Disney Infinity (series)": "images/infinity.jpg",
+        "Disney Magical World": "images/magicalWorld.jpg",
+        "Disney Tsum Tsum (game)": "images/tsumTsum.jpg",
+        "Disney Emoji Blitz": "images/emojiBlitz.jpg",
+        "Disney Crossy Road": "images/crossyRoad.jpg",
+        "Disney Magical Dice": "images/magicalDice.jpg",
+        "Disney Magic Kingdoms": "images/magicKingdoms.jpg",
+        "Disney Heroes: Battle Mode": "images/battleMode.jpg",
+        "Disney Epic Quest": "images/noImage.jpg",
+        "Disney Tsum Tsum Festival": "images/tsumTsumFestival.png",
+        "Disney Sorcerer's Arena": "images/sorcerersArena.jpg",
+        "Disney Getaway Blast": "images/getawayBlast.jpg",
+      };
 
-        const videoGamesContainer = document.querySelector(".videoGames-grid");
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuBtn = document.getElementById("menu-btn");
+        const menu = document.getElementById("menu");
 
-        Object.keys(imagePathMap).forEach((gameTitle) => {
-          const gameItem = document.createElement("li");
-          gameItem.classList.add("videoGames-item");
-
-          const gameImage = document.createElement("img");
-          gameImage.src = imagePathMap[gameTitle];
-          gameImage.alt = gameTitle;
-          gameImage.classList.add("item-image");
-
-          const gameTitleElement = document.createElement("p");
-          gameTitleElement.textContent = gameTitle;
-          gameTitleElement.classList.add("item-name");
-
-          gameItem.appendChild(gameImage);
-          gameItem.appendChild(gameTitleElement);
-          videoGamesContainer.appendChild(gameItem);
+        menuBtn.addEventListener("click", () => {
+          menu.classList.toggle("hidden");
         });
       });
     </script>
