@@ -27,6 +27,7 @@
     <!-- Navbar -->
     <header class="bg-lightblue shadow-lg px-5">
       <nav class="flex justify-between items-center">
+
         <!-- Brand -->
         <a href="index.html" class="flex items-center gap-3">
           <p class="font-mansalva text-2xl">Stitch</p>
@@ -101,7 +102,10 @@
         >
           Park Attractions
         </h1>
-        <div id="parkAttractions-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div
+          id="parkAttractions-grid"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+        >
           <!-- Park attractions content will be dynamically added here -->
         </div>
       </section>
@@ -112,7 +116,7 @@
       <p class="font-roboto text-sm">@2025 Made by Alexandra Smirnova.</p>
     </footer>
 
-    <!-- Scripts -->
+    <!-- External JavaScript -->
     <script>
       const imagePathMap = {
         "Stitch's Great Escape!": "images/greatEscape.jpg",
@@ -132,7 +136,7 @@
         "Halloween Pop'n LIVE": "images/halloweenPop.jpg",
         "Wonderful World of Animation": "images/noImage.jpg",
       };
-      
+
       document.addEventListener("DOMContentLoaded", function () {
         const menuBtn = document.getElementById("menu-btn");
         const menu = document.getElementById("menu");
