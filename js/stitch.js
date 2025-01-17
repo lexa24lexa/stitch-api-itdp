@@ -30,6 +30,8 @@ const excludeTVShows = [
   "It's a Small World: The Animated Series",
 ];
 
+const excludeVideoGames = [];
+
 const excludeAttractions = [
   "It's a Small World",
   "The Golden Mickeys",
@@ -147,6 +149,43 @@ async function displayTVShows() {
   });
 }
 
+// Video Games
+async function displayVideoGames() {
+  const data = await fetchCharacterData();
+  const videoGamesGrid = document.getElementById("videoGames-grid");
+
+  videoGamesGrid.innerHTML = "";
+
+  if (!data || !data.data || !data.data.videoGames) {
+    videoGamesGrid.innerHTML = `<p class="text-darkblue">No video games found or failed to fetch data.</p>`;
+    return;
+  }
+
+  const videoGames = data.data.videoGames.filter(
+    (game) => !excludeVideoGames.includes(game)
+  );
+
+  videoGames.forEach((game) => {
+    const videoGameCard = document.createElement("div");
+    videoGameCard.className =
+      "bg-cyan-100 rounded-lg shadow-lg p-4 flex flex-col items-center";
+
+    const gameImage = document.createElement("img");
+    gameImage.src = imagePathMap[game] || "images/noImage.jpg";
+    gameImage.alt = game;
+    gameImage.className =
+      "h-40 w-auto rounded mb-4 border-2 border-cyan-500";
+
+    const gameTitle = document.createElement("p");
+    gameTitle.textContent = game;
+    gameTitle.className = "text-cyan-700 text-lg font-roboto";
+
+    videoGameCard.appendChild(gameImage);
+    videoGameCard.appendChild(gameTitle);
+    videoGamesGrid.appendChild(videoGameCard);
+  });
+}
+
 // Park Attractions
 async function displayParkAttractions() {
   const data = await fetchCharacterData();
@@ -189,5 +228,6 @@ document.addEventListener("DOMContentLoaded", () => {
   displayMovies();
   displayShortFilms();
   displayTVShows();
+  displayVideoGames();
   displayParkAttractions();
 });
