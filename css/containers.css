@@ -1,0 +1,84 @@
+.item-image {
+    height: 150px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+.item-name {
+    text-align: center;
+    font-size: 16px;
+    font-family: Roboto, sans-serif;
+    color: #000;
+    margin-top: 5px;
+}
+
+/* Container para grid */
+.films-grid,
+.shortFilms-grid,
+.tvShows-grid,
+.videoGames-grid,
+.parkAttractions-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+}
+
+/* Estilo dos itens */
+.films-grid > li,
+.shortFilms-grid > li,
+.tvShows-grid > li,
+.videoGames-grid > li,
+.parkAttractions-grid > li {
+    flex: 0 1 calc(25% - 20px); /* 4 itens por linha */
+    max-width: calc(25% - 20px); /* Limita a largura */
+    background-color: lightblue;
+    border: 2px solid darkblue;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+.films-grid > li:hover,
+.shortFilms-grid > li:hover,
+.tvShows-grid > li:hover,
+.videoGames-grid > li:hover,
+.parkAttractions-grid > li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo das imagens dentro dos itens */
+.films-grid > li .item-image,
+.shortFilms-grid > li .item-image,
+.tvShows-grid > li .item-image,
+.videoGames-grid > li .item-image,
+.parkAttractions-grid > li .item-image {
+    height: 150px;
+    width: auto;
+    display: block;
+    margin: 0 auto 10px;
+    border-radius: 5px;
+    border: 2px solid darkblue;
+    object-fit: cover;
+}
+
+/* Estilo do texto dentro dos itens */
+.films-grid > li .item-name,
+.shortFilms-grid > li .item-name,
+.tvShows-grid > li .item-name,
+.videoGames-grid > li .item-name,
+.parkAttractions-grid > li .item-name {
+    font-size: 14px;
+    font-family: Roboto, sans-serif;
+    margin-top: 5px;
+    color: #000080;
+}
