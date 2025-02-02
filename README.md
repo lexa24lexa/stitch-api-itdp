@@ -1,10 +1,11 @@
 ## Authors
-
 **Alexandra Smirnova** - [lexa24lexa](https://github.com/lexa24lexa)
 
 ## Hosted link
-
 [stitch api live in github pages](https://lexa24lexa.github.io/stitch-api/)
+
+## Github repo
+[stitch api repo](https://github.com/lexa24lexa/stitch-api-itdp)
 
 ## Updated version 2nd year attempt
 **Design**
@@ -40,5 +41,4 @@ Last year feedback:
 - I implemented this in the js folder, stitch.js file at the end.
 
 ## Running the project in VSC
-
 npm install -- node_modules
