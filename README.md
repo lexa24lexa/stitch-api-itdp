@@ -1,14 +1,14 @@
 ## Authors
 
-* **Alexandra Smirnova** - [lexa24lexa](https://github.com/lexa24lexa)
+**Alexandra Smirnova** - [lexa24lexa](https://github.com/lexa24lexa)
 
 ## Hosted link
 
-https://lexa24lexa.github.io/stitch-api/
+[stitch api live in github pages](https://lexa24lexa.github.io/stitch-api/)
 
 ## Updated version 2nd year attempt
 **Design**
-![alt text](image.png)
+![last year feedback](image.png)
 Last year feedback:
 10/10, "Good design".
 
@@ -42,5 +42,3 @@ Last year feedback:
 ## Running the project in VSC
 
 npm install -- node_modules
-
-npm run build:css
