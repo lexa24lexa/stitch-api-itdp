@@ -2,7 +2,7 @@
 **Alexandra Smirnova** - [lexa24lexa](https://github.com/lexa24lexa)
 
 ## Hosted link
-[stitch api live in github pages](https://lexa24lexa.github.io/stitch-api/)
+[stitch api live in github pages](https://lexa24lexa.github.io/stitch-api-itdp/)
 
 ## Github repo
 [stitch api repo](https://github.com/lexa24lexa/stitch-api-itdp)
